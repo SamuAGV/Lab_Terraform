@@ -1,13 +1,49 @@
 variable "aplication_name" {
   description = "The name of the application"
   type        = string
-  default     = "integradora"
+
+  validation{
+    condition     = length(var.project_name) >3 && length(var.project_name) <= 20 
+    error_message = "Project name must be between 3 and 20 characters long."
+  }
 }
 
 variable "environment" {
   description = "The environment of the application"
   type        = string
-  default     = "dev"
+
+  validation {
+    condition     = contains(
+      ["dev", "staging", "prod"], 
+      var.environment
+      )
+
+    error_message = "Environment must be one of 'dev', 'staging', or 'prod'."
+  }  
+}
+
+variable "location" {
+  description = "The location where the application will be deployed"
+  type        = string
+  default = "mexicocentral"
+}
+
+variable "vnet_address_space" {
+  description = "Espacio de direcciones de red virtual"
+  type = list(string)
+
+  default = [
+    "10.0.0.0/16"
+  ]
+}
+
+variable "tags" {
+  description = "Tags for the resources"
+  type        = map(string)
+
+  default     = {
+    managed_by  = "terraform"
+  }
 }
 
 
