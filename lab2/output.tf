@@ -1,10 +1,11 @@
-terraform {
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 5.0"
-    }
-  }
+output "resource_group_name" {
+  value = azurerm_resource_group.rg.name
+}
 
-  required_version = ">= 1.13.0"
+output "resource_group_id" {
+  value = azurerm_resource_group.rg.id
+}
+
+output "vitual_network_name" {
+  value = azurerm_virtual_network.vnet.name
 }
