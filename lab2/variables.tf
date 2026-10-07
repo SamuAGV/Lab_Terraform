@@ -21,7 +21,7 @@ variable "location" {
     description = "The location where the resources will be deployed"
     type        = string
 
-    default     = "mexicocentral"
+    default     = "chilecentral"
 }
 
 variable "vnet_address_space" {
@@ -38,9 +38,9 @@ variable "tags" {
     default     = {managed_by = "Terraform"}
 }
 
-variable "suscription_id" {
+variable "subscription_id" {
     description = "The subscription ID where the resources will be created"
     type        = string
-    default     = "3b1f5e3c-2d4a-4e5b-9f6c-8e7d9f0a1b2c"
+    default     = "36b2cb85-9b3e-4a5f-8d85-a3a19ffe3ba6"
     sensitive   = true
 }
