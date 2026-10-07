@@ -26,14 +26,21 @@ variable "location" {
 
 variable "vnet_address_space" {
     description = "The address space for the virtual network"
-    type        = string
+    type        = list(string)
 
-    default     = "10.0.0.0/16"
+    default     = ["10.0.0.0/16"]
 }
 
 variable "tags" {
     description = "A map of tags to assign to the resources"
     type        = map(string)
 
-    default     = "terraform"
+    default     = {managed_by = "Terraform"}
+}
+
+variable "suscription_id" {
+    description = "The subscription ID where the resources will be created"
+    type        = string
+    default     = "3b1f5e3c-2d4a-4e5b-9f6c-8e7d9f0a1b2c"
+    sensitive   = true
 }
