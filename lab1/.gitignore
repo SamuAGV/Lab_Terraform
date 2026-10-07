@@ -1,0 +1,7 @@
+.terraform/
+*.tfstate
+*.tfstate.*
+*.mp4
+*.mov
+*.avi
+crash.log

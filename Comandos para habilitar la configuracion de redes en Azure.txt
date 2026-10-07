@@ -1,0 +1,2 @@
+az provider show --namespace Microsoft.Network --subscription SUBSCRIPTION_ID --query "{namespace:namespace,state:registrationState}" --output json
+az provider register --namespace Microsoft.Network --subscription SUBSCRIPTION_ID --wait

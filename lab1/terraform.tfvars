@@ -2,14 +2,15 @@ project_name = "integradora"
 
 environment = "dev"
 
-location = "mexicocentral"
+location = "chilecentral"
 
-vnet_addres_space = [
-    "10.10.0.0/16"
+vnet_address_space = [
+  "10.10.0.0/16"
 ]
 
 tags = {
-    managed_by = "integradora"
-    owner = "it"
-    cost_center = "integradora"
+  managed_by  = "terraform"
+  owner       = "it"
+  cost_center = "integradora"
+
 }
